@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ido meme's for the world</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../static/index.css">
+<link rel="icon" href="static/logo.png" type="Image/gif" sizes="16x16">
+</head>
+<body>
+	<nav>
+  <div class="container">
+    <img src="../static/logo.png" style="width: 7%;height: 7%;">
+    <button>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="navbar-menu">
+   <li><a href="{{ url_for('hello_world') }}">Home</a></li>
+    <li><a href="{{ url_for('forming') }}">Add Meme</a></li>
+    <li><a href="{{ url_for('admin') }}">ADMIN</a></li>
+    </ul>
+    
+  </div>
+</nav>
+<!-- 	<form action="/login" method="POST">
+    	<input type="text" name="userName" placeholder="User Name" value={{request.form.userName}}>
+    	<br>
+    	<input type="text" name="password" placeholder="Password" value={{request.form.passward}}>
+    	<br>
+    	<input type="submit" value="Submit">
+	</form> -->
+	
+<br>
+<br>
+<br>
+<br>
+
+	<div class="wrapper fadeInDown" style="margin-bottom:20%;">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../static/logo.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="/admin" method="POST">
+      <input type="text" id="login" class="fadeIn second" name="userName" placeholder="login" >
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+      <p>{{error}}</p>
+    </form>
+
+    <!-- Remind Passowrd -->
+
+
+<script type="text/javascript">
+  
+  $(document).ready(function () {
+  
+  
+  
+   var c, currentScrollTop = 0,
+       navbar = $('nav');
+
+   $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      var b = navbar.height();
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+  });
+  
+});
+</script>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/index.css">
+  <link rel="icon" href="static/logo.png" type="Image/gif" sizes="16x16">
+
+</head>
+	<title>Ido meme's for the world </title>
+<body>
+<nav>
+  <div class="container">
+    <img src="../static/logo.png" style="width: 7%;height: 7%;">
+    <button>id ="text"
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="navbar-menu">
+   <li><a href="{{ url_for('hello_world') }}">Home</a></li>
+    <li><a href="{{ url_for('forming') }}">Add Meme</a></li>
+    <li><a href="{{ url_for('admin') }}">ADMIN</a></li>
+    </ul>
+    
+  </div>
+</nav>
+   
+<!--         <li><img src="static/logo.png" sizes="16x16"> </li> -->
+ 
+ <img src="../static/logo black text.png" style="  height: 30%;width: 30%;  display: block;margin-left: auto;margin-right: auto;">
+<center>  <div id="text">the best memes on the web!!!</div> 
+</center>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  {%for meme in memes %}
+    <div class="column">
+      <h1>{{meme.title}}</h1>
+      <h2>{{meme.description}}</h2>
+      <img src="{{meme.image_url}}" style="width:100%">
+    </div>
+  {%endfor%}
+
+
+<script type="text/javascript">
+  
+  $(document).ready(function () {
+  
+  
+  
+   var c, currentScrollTop = 0,
+       navbar = $('nav');
+
+   $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      var b = navbar.height();
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+  });
+  
+});
+
+ 
+
+</script>
+
+<script type="text/javascript">
+let text = document.querySelector('#text');
+
+text.setAttribute('data-text',text.innerHTML);
+
+document.body.innerHTML += '<div style="position: absolute; bottom: 0; left: 0; right: 0; padding: .5em; font-size: 12px; font-family: monospace; text-align: center; pointer-event: none;"></div>';
+
+var lr = document.querySelector('html');
+window.addEventListener('click',()=>{
+  var newone = lr.cloneNode(true);
+  lr.parentNode.replaceChild(newone, lr);
+  lr = newone;
+});
+
+</script>
+</body>
+</html>

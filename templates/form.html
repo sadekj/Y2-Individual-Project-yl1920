@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="static/logo.png" type="Image/gif" sizes="16x16">
+  <link rel="stylesheet" type="text/css" href="../static/index.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Ido's memes fro the world</title>
+</head>
+<body>
+
+
+   <nav>
+  <div class="container">
+    <img src="../static/logo.png" style="width: 7%;height: 7%;">
+    <button>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="navbar-menu">
+   <li><a href="{{ url_for('hello_world') }}">Home</a></li>
+    <li><a href="{{ url_for('forming') }}">Add Meme</a></li>
+    <li><a href="{{ url_for('admin') }}">ADMIN</a></li>
+    </ul>
+    
+  </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <center>
+      <form class="froming_from" action="/form" method="POST" id="slider_form" enctype=multipart/form-data>
+          <br><h2>Yooooo, 
+          please add your meme</h2>
+      <br>  <label class="input">
+          <input type="text" class="name" placeholder="Meme Name" name="title">
+        </label>
+        <br>    <input class="name" id="exampleFormControlTextarea1" rows="6" input type="text" placeholder="Meme Description" name="description" style="width:25%;">
+</input>
+<br> <input class="name" id="exampleFormControlTextarea1" rows="6" input type="text" placeholder="Image Url" form="slider_form" name="img_url" style="width:25%;">
+</input>
+<br>  <input type="submit" value="Submit">
+
+
+           <!-- <input  name="submit" value="Submit" href="#popup1"> -->
+
+       </form>  
+       <br>
+       <br>
+       <a href="https://sites.google.com/view/memesbyidodi/home" target="_blank"><button type="button" class="btn btn-primary">Memes to use</button></a>
+</center>
+<script type="text/javascript">
+  
+  $(document).ready(function () {
+  
+  
+  
+   var c, currentScrollTop = 0,
+       navbar = $('nav');
+
+   $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      var b = navbar.height();
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+  });
+  
+});
+</script>
+</body>
+</html>
