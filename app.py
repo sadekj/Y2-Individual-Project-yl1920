@@ -67,4 +67,4 @@ def edit():
 # 	declarative_base.description = description
 # 	declarative_base.img_url = img_url	
 if __name__ == "__main__":
-	app.run(debug=True, port=5001)
+	app.run()
